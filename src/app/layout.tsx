@@ -27,19 +27,20 @@ export default function RootLayout({
 
   return (
     <html lang="pt">
-      <body className="bg-zinc-100 container m-0 p-0 font-sans antialiased overflow-x-hidden">
-        <Sidebar
-          status={status}
-          scope={scope}
-          setStatus={() => {
-            setStatus(false);
-          }}
-        />
-        <div className={`${status ? "blur-sm" : "duration-100"}`}>
-          <TopMenu handleClickOpenMenu={handleClickOpenMenu} />
-          {/* {children} */}
-          <BottomMenu />
-        </div>
+      <body className="bg-zinc-50 container m-0 p-0 font-sans antialiased overflow-x-hidden overflow-y-hidden">
+        {children}
+        {/* <Sidebar
+            status={status}
+            scope={scope}
+            setStatus={() => {
+              setStatus(false);
+            }}
+          />
+          <div className={`${status ? "blur-sm" : "duration-100"}`}>
+            <TopMenu handleClickOpenMenu={handleClickOpenMenu} />
+            {children}
+            <BottomMenu />
+          </div> */}
       </body>
     </html>
   );
