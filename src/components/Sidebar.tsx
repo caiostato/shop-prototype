@@ -1,11 +1,6 @@
 "use client";
-import {
-  AnimationScope,
-  motion,
-  useAnimate,
-  useDragControls,
-} from "framer-motion";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { AnimationScope, motion } from "framer-motion";
 
 type SidebarProps = {
   status: boolean;
@@ -15,9 +10,6 @@ type SidebarProps = {
 
 const Sidebar = ({ status, setStatus, scope }: SidebarProps) => {
   useEffect(() => {}, [status]);
-  const dragControls = useDragControls();
-
-  const [ableToOrigin, setAbleToOrigin] = useState(false);
 
   const handleDrag = (event: any, v: number) => {
     setTimeout(() => {
@@ -34,7 +26,6 @@ const Sidebar = ({ status, setStatus, scope }: SidebarProps) => {
     >
       <motion.div
         drag="x"
-        // dragControls={dragControls}
         onDragEnd={(event, info) => handleDrag(event, info.point.x)}
         dragMomentum={false}
         dragSnapToOrigin={true}

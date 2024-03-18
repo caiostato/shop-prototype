@@ -3,7 +3,7 @@ import "./globals.css";
 import BottomMenu from "@/components/BottomMenu";
 import TopMenu from "@/components/TopMenu";
 import Sidebar from "@/components/Sidebar";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useAnimate } from "framer-motion";
 
 export default function RootLayout({
@@ -24,8 +24,6 @@ export default function RootLayout({
     handleClickOpen();
     setStatus(true);
   };
-
-  // context.setStatus();
 
   return (
     <html lang="pt">

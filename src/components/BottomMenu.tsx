@@ -1,6 +1,6 @@
 "use client";
-import { Home2, ShoppingCart, User } from "iconsax-react";
 import React, { useState } from "react";
+import { Home2, ShoppingCart, User } from "iconsax-react";
 
 const BottomMenu = () => {
   const [iconSelected, setIconSelected] = useState("home");

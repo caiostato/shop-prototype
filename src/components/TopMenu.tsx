@@ -1,13 +1,13 @@
 "use client";
-import { HambergerMenu, SearchNormal1 } from "iconsax-react";
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+import { HambergerMenu, SearchNormal1 } from "iconsax-react";
+import { useAnimate } from "framer-motion";
 
 import LogoMin from "@/assets/logo-min.png";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 
 import BackButton from "./BackButton";
-import { useAnimate } from "framer-motion";
 import { Input } from "./ui/input";
 
 type TopMenuProps = {
