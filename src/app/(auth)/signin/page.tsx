@@ -5,7 +5,7 @@ import Link from "next/link";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Apple, Google } from "iconsax-react";
+import { Apple, ArrowLeft, Google } from "iconsax-react";
 
 import { SignInSchema } from "@/schemas";
 
@@ -37,7 +37,10 @@ const SignInPage = () => {
 
   return (
     <div className="w-screen h-screen flex flex-col justify-start overflow-x-hidden overflow-y-hidden">
-      <div className="w-full mx-auto flex justify-center items-center mt-8 overflow-x-hidden">
+      <div className="mx-2 mt-2">
+        <ArrowLeft size="36" color="#F89595" />
+      </div>
+      <div className="w-full mx-auto flex justify-center items-center  overflow-x-hidden">
         <Image src={Logo} alt="logo" width={150} />
       </div>
 
@@ -82,7 +85,9 @@ const SignInPage = () => {
           />
 
           <div className="w-full mt-8 overflow-x-hidden">
-            <Button mode="border">Sign In</Button>
+            <Button mode="border" type="submit">
+              Sign In
+            </Button>
           </div>
 
           <div className="font-medium w-full flex justify-center items-center py-2 overflow-x-hidden">
