@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
@@ -23,6 +24,8 @@ import Button from "@/components/Button";
 import Logo from "@/assets/logo-min.png";
 
 const SignInPage = () => {
+  const { push } = useRouter();
+
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
@@ -34,11 +37,14 @@ const SignInPage = () => {
   const handleSubmit = (values: z.infer<typeof SignInSchema>) => {
     console.log(values);
   };
+  const handleBack = () => {
+    push("/");
+  };
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-start overflow-x-hidden overflow-y-hidden">
-      <div className="mx-2 mt-2">
-        <ArrowLeft size="36" color="#F89595" />
+    <div className="w-screen h-screen bg-white flex flex-col justify-start overflow-x-hidden overflow-y-hidden">
+      <div className="mx-2 mt-2" onClick={handleBack}>
+        <ArrowLeft size="36" color="#F89595" onClick={handleBack} />
       </div>
       <div className="w-full mx-auto flex justify-center items-center  overflow-x-hidden">
         <Image src={Logo} alt="logo" width={150} />
@@ -59,7 +65,7 @@ const SignInPage = () => {
                   <Input
                     {...field}
                     placeholder="john.doe@example.com"
-                    className="rounded-lg shadow-sm border-none bg-white"
+                    className="rounded-lg shadow-sm border-none bg-zinc-50"
                   />
                 </FormControl>
                 {fieldState.isTouched ? <FormMessage /> : null}
@@ -76,7 +82,7 @@ const SignInPage = () => {
                   <Input
                     {...field}
                     type="password"
-                    className="rounded-lg shadow-sm border-none bg-white"
+                    className="rounded-lg shadow-sm border-none bg-zinc-50"
                   />
                 </FormControl>
                 {fieldState.isTouched ? <FormMessage /> : null}
@@ -108,7 +114,7 @@ const SignInPage = () => {
 
           <div className="w-full flex justify-center items-center gap-2 absolute bottom-8 overflow-x-hidden">
             Doesn't have account?
-            <Link href={"/"} className="font-medium text-[#F89595]">
+            <Link href={"/signup"} className="font-medium text-[#F89595]">
               Sign up here.
             </Link>
           </div>
