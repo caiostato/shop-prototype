@@ -1,6 +1,6 @@
 export const safeParseFloat = (
   value: number | string | null | undefined
-): number | null => {
+): number => {
   if (typeof value === "number") {
     return value; // Se já for um número, retorne-o diretamente
   }
