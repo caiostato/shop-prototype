@@ -1,11 +1,6 @@
-import "./globals.css";
-import React from "react";
+import "../globals.css";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt">
       <body className="bg-white w-screen h-screen m-0 p-0 font-sans antialiased overflow-x-hidden overflow-y-hidden">

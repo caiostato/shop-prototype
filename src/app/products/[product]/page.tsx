@@ -1,7 +1,7 @@
 import React from "react";
 
-const AccountPage = () => {
+const Product = () => {
   return <div>page</div>;
 };
 
-export default AccountPage;
+export default Product;

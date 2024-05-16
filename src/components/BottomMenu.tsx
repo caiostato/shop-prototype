@@ -1,20 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Home2, ShoppingCart, User } from "iconsax-react";
+import { useRouter } from "next/navigation";
 
 type BottomMenuProps = {
-  initialIcon?: string;
+  iconSelected: any;
+  setIconSelected: any;
 };
 
-const BottomMenu = ({ initialIcon = "home" }: BottomMenuProps) => {
-  const [iconSelected, setIconSelected] = useState(initialIcon);
+const BottomMenu = ({ iconSelected, setIconSelected }: BottomMenuProps) => {
+  const { push } = useRouter();
 
   const handleClickIcon = (value: string) => {
     setIconSelected(value);
   };
   return (
-    <div className="w-screen h-16 bg-zinc-50 absolute bottom-0 flex flex-row justify-around shadow-sm ">
-      <div
+    <div className="w-screen h-16 bg-white absolute bottom-0 flex flex-row justify-around z-50 border-t border-neutral-100 shadow-lg">
+      <a
+        href="/"
         className={`my-2 p-2 rounded-full ${
           iconSelected == "home" ? "bg-[#F89595]/30" : ""
         }`}
@@ -31,9 +34,10 @@ const BottomMenu = ({ initialIcon = "home" }: BottomMenuProps) => {
             handleClickIcon("home");
           }}
         />
-      </div>
+      </a>
 
-      <div
+      <a
+        href="/cart"
         className={`my-2 p-2 rounded-full duration-100 ease-in ${
           iconSelected == "cart" ? "bg-[#F89595]/30" : ""
         }`}
@@ -50,9 +54,10 @@ const BottomMenu = ({ initialIcon = "home" }: BottomMenuProps) => {
             handleClickIcon("cart");
           }}
         />
-      </div>
+      </a>
 
-      <div
+      <a
+        href="/account"
         className={`my-2 p-2 rounded-full ${
           iconSelected == "user" ? "bg-[#F89595]/30" : ""
         }`}
@@ -69,7 +74,7 @@ const BottomMenu = ({ initialIcon = "home" }: BottomMenuProps) => {
             handleClickIcon("user");
           }}
         />
-      </div>
+      </a>
     </div>
   );
 };
