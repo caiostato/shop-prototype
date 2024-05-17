@@ -15,7 +15,7 @@ const nextConfig = {
   // },
   reactStrictMode: true,
   env: {
-    REACT_APP_API_URL: process.env.REACT_APP_API_URL,
+    NEXT_MONGO_URL: process.env.NEXT_MONGO_URL,
   },
 };
 
