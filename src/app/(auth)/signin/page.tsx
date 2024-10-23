@@ -22,6 +22,7 @@ import {
 import Button from "@/components/Button";
 
 import Logo from "@/assets/logo-min.png";
+import { signIn } from "next-auth/react";
 
 const SignInPage = () => {
   const { push } = useRouter();
@@ -39,6 +40,10 @@ const SignInPage = () => {
   };
   const handleBack = () => {
     push("/");
+  };
+
+  const handleLoginWithGoogle = () => {
+    signIn("google", { callbackUrl: "http://localhost:3000/admin" });
   };
 
   return (
@@ -100,7 +105,7 @@ const SignInPage = () => {
             or connect with
           </div>
           <div className="p-0 gap-4 flex items-center justify-center overflow-x-hidden">
-            <Button mode="border">
+            <Button mode="border" onClick={handleLoginWithGoogle}>
               <div className="flex align-middle my-auto font-medium gap-4 text-base justify-center">
                 <Google size="24" color="#F89595" variant="Bold" />
               </div>
