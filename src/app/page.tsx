@@ -1,7 +1,15 @@
+import Menu from "@/components/Menu";
+import TopAd from "@/components/TopAd";
+import { getProducts } from "@/services/products";
 import React from "react";
 
-const page = () => {
-  return <div>HOME PAGE</div>;
-};
+export default async function Page() {
+  // const { products, totalProducts } = await getProducts();
 
-export default page;
+  return (
+    <div className="min-h-screen w-full ">
+      <TopAd />
+      <Menu />
+    </div>
+  );
+}
