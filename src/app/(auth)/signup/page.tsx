@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/form";
 import Button from "@/components/Button";
 
-import Logo from "@/assets/logo-min.png";
+import Logo from "@/assets/logo-min.svg";
 
 const SignUpPage = () => {
   const { push } = useRouter();
@@ -43,30 +43,31 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="w-screen h-screen bg-white flex flex-col justify-start overflow-x-hidden overflow-y-hidden">
-      <div className="mx-2 mt-2" onClick={handleBack}>
-        <ArrowLeft size="36" color="#F89595" onClick={handleBack} />
-      </div>
-      <div className="w-full mx-auto flex justify-center items-center  overflow-x-hidden">
-        <Image src={Logo} alt="logo" width={150} />
+    <div className="w-full h-full flex flex-col bg-cream md:bg-white overflow-x-hidden overflow-y-hidden">
+      <div className="mx-2 mt-2 self-start" onClick={handleBack}>
+        <ArrowLeft size="36" className="text-gold-600" onClick={handleBack} />
       </div>
 
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
-          className="gap-2 flex flex-col p-4 w-full overflow-x-hidden"
+          className="gap-2 flex flex-col p-4 w-full md:w-1/4 md:mt-32 md:bg-cream md:rounded-md md:border-gold-600/20 md:border-[1px] overflow-x-hidden overflow-y-hidden self-center"
         >
+          <div className="w-full mx-auto flex justify-center items-center  overflow-x-hidden">
+            <Image src={Logo} alt="logo" width={150} height={100} />
+          </div>
           <FormField
             control={form.control}
             name="name"
             render={({ field, fieldState }) => (
               <FormItem>
-                <FormLabel>Nome</FormLabel>
+                <FormLabel className="text-gold-600">Nome</FormLabel>
                 <FormControl>
-                  <Input
+                  <input
                     {...field}
+                    className="h-9 w-full rounded-md px-6 py-1 bg-[#f8f5f1] outline-none ring-none placeholder-gold-600/50 text-gold-600 placeholder:font-light"
+                    type="text"
                     placeholder="John Doe"
-                    className="rounded-lg shadow-sm border-none bg-zinc-50"
                   />
                 </FormControl>
                 {fieldState.isTouched ? <FormMessage /> : null}
@@ -78,12 +79,13 @@ const SignUpPage = () => {
             name="email"
             render={({ field, fieldState }) => (
               <FormItem>
-                <FormLabel>E-mail</FormLabel>
+                <FormLabel className="text-gold-600">E-mail</FormLabel>
                 <FormControl>
-                  <Input
+                  <input
                     {...field}
+                    className="h-9 w-full rounded-md px-6 py-1 bg-[#f8f5f1] outline-none ring-none placeholder-gold-600/50 text-gold-600 placeholder:font-light"
+                    type="text"
                     placeholder="john.doe@example.com"
-                    className="rounded-lg shadow-sm border-none bg-zinc-50"
                   />
                 </FormControl>
                 {fieldState.isTouched ? <FormMessage /> : null}
@@ -95,12 +97,12 @@ const SignUpPage = () => {
             name="password"
             render={({ field, fieldState }) => (
               <FormItem>
-                <FormLabel>Senha</FormLabel>
+                <FormLabel className="text-gold-600">Senha</FormLabel>
                 <FormControl>
-                  <Input
+                  <input
                     {...field}
+                    className="h-9 w-full rounded-md px-6 py-1 bg-[#f8f5f1] outline-none ring-none placeholder-gold-600/50 text-gold-600 placeholder:font-light"
                     type="password"
-                    className="rounded-lg shadow-sm border-none bg-zinc-50"
                   />
                 </FormControl>
                 {fieldState.isTouched ? <FormMessage /> : null}
@@ -114,9 +116,12 @@ const SignUpPage = () => {
             </Button>
           </div>
 
-          <div className="w-full flex justify-center items-center gap-2 absolute bottom-8 overflow-x-hidden">
+          <div className="w-full flex justify-center items-center gap-2 pt-10 text-gold-600/70 overflow-x-hidden">
             Already have a account?
-            <Link href={"/signin"} className="font-medium text-[#F89595]">
+            <Link
+              href={"/signin"}
+              className="font-medium text-gold-600 hover:text-gold-600/50 duration-150"
+            >
               Sign in here.
             </Link>
           </div>

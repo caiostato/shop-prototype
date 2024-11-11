@@ -17,7 +17,7 @@ const SearchBar = () => {
     <div className="flex gap-4 items-center">
       <div className="h-10 px-4 rounded-lg flex items-center bg-[#f8f5f1]">
         <input
-          className="h-8 bg-[#f8f5f1] outline-none ring-none placeholder-gold-600/50 text-gold-600 placeholder:font-light"
+          className="h-8 bg-[#f8f5f1] rounded-md outline-none ring-none placeholder-gold-600/50 text-gold-600 placeholder:font-light"
           type="text"
           placeholder="Pesquise aqui..."
           value={inputValue}

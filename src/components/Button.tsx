@@ -13,14 +13,14 @@ function Button({
   ...props
 }: ButtonType) {
   const styles = {
-    full: "bg-[#F89595] hover:bg-[#F89595] text-white cursor-pointer",
+    full: "bg-gold-600 hover:bg-gold-600/50 text-white cursor-pointer",
     border:
-      "border border-[#F89595] text-[#F89595] hover:border-[#F89595] hover:text-[#F89595] cursor-pointer",
-    none: "text-[#F89595] hover:text-[#F89595] cursor-pointer",
+      "border border-gold-600 text-gold-600 hover:border-gold-600/50 hover:text-gold-600/50 cursor-pointer",
+    none: "text-gold-600 hover:text-gold-600/50 cursor-pointer",
     disabledFull: "cursor-not-allowed bg-grey-600 hover:bg-grey-600 text-white",
     disabledBorder:
-      "cursor-not-allowed border border-grey-600 text-grey-600 hover:border-grey-600 hover:text-grey-600",
-    disabledNone: "cursor-not-allowed text-grey-600 hover:text-grey-600",
+      "cursor-not-allowed border border-grey-600 text-grey-600 hover:border-grey-600/50 hover:text-grey-600/50",
+    disabledNone: "cursor-not-allowed text-grey-600 hover:text-grey-600/50",
   };
 
   const activeStyle = disabled
